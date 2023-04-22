@@ -17,7 +17,17 @@ resource "aws_instance" "app_server" {
   ami           = "ami-0db245b76e5c21ca1"
   instance_type = "t2.micro"
   key_name = "iac-alura"
+  # user_data = <<-EOF
+  #                #!bin/bash
+
+  #                cd /home/ubuntu
+
+  #                echo "<h1> Feito com Terraform</h1>" > index.html
+
+  #                nohup busybox httpd -f -p 8080 &
+
+  #                EOF
   tags = {
-    Name = "Primeiro ambiente"
+    Name = "Test Aws"
   }
 }
